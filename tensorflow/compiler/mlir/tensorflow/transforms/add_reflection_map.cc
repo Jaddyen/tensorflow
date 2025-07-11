@@ -29,7 +29,6 @@ namespace emitc {
 }  // namespace emitc
 }  // namespace mlir
 
-
 namespace {
 class AddReflectionMapPass
     : public impl::AddReflectionMapPassBase<AddReflectionMapPass> {
@@ -111,4 +110,3 @@ void AddReflectionMapPass::runOnOperation() {
 std::unique_ptr<OperationPass<emitc::ClassOp>> CreateAddReflectionMapPass() {
   return std::make_unique<AddReflectionMapPass>();
 }
-
