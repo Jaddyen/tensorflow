@@ -233,6 +233,21 @@ tf_cc_binary(
     ],
 )
 
+tf_cc_binary(
+    name = "tf-emitc-opt",
+    srcs = [
+        "tf_emitc_opt_main.cc",
+    ],
+    deps = [
+        "@llvm-project//llvm:Support",
+        "@llvm-project//mlir:IR",
+        "@llvm-project//mlir:Pass",
+        "@llvm-project//mlir:Support",
+        "@llvm-project//mlir:Transforms",
+        "//tensorflow/compiler/mlir/tensorflow/transforms:emitc",
+    ],
+)
+
 tf_cc_test(
     name = "mlir_graph_optimization_pass_test",
     srcs = ["mlir_graph_optimization_pass_test.cc"],
